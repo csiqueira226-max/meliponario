@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meliponário Cambará - Produtos de Abelhas Sem Ferrão</title>
+    <meta name="description"
+        content="Especializado na criação de abelhas sem ferrão, o Meliponário Cambará oferece produtos de alta qualidade para entusiastas e criadores.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2b9348;
+            --primary-light: #55a630;
+            --primary-dark: #007f5f;
+            --secondary: #e9c46a;
+            --secondary-dark: #e0aa3e;
+            --bg-light: #fbfaf8;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --white: #ffffff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-center {
+            flex: 1;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .header-center a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .header-center a:hover {
+            color: var(--primary);
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 15px 10px 35px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .search-container input:focus {
+            border-color: var(--primary);
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .social-icons a.instagram,
+        .social-icons a.instagram:hover {
+            color: #E1306C;
+        }
+
+        .social-icons a.youtube,
+        .social-icons a.youtube:hover {
+            color: #FF0000;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Banner */
+        .banner-section {
+            padding: 40px 0;
+        }
+
+        .banner-container {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(43, 147, 72, 0.15);
+            height: 500px;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 10s ease;
+        }
+
+        .banner-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 50px;
+        }
+
+        .banner-text h2 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner-text p {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        /* Sections Common */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* About Us */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-text strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--secondary);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        /* Catalog */
+        .catalog {
+            background-color: var(--white);
+        }
+
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 60px 0 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+            background-color: #1ebe5d;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-img {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.03);
+        }
+
+        .product-info {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 16px;
+        }
+
+        .product-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .btn-buy {
+            background-color: var(--secondary);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-buy:hover {
+            background-color: var(--secondary-dark);
+            color: var(--white);
+            transform: rotate(15deg);
+        }
+
+        .btn-wpp {
+            background-color: #25D366;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-wpp:hover {
+            background-color: #1ebe5d;
+            transform: scale(1.1);
+        }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-light);
+        }
+
+        /* Support */
+        .support {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/></svg>');
+            background-size: 150px 150px;
+            opacity: 0.5;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .support-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .support-card h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--bg-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--secondary);
+            opacity: 0.3;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #b3b3b3;
+        }
+
+        .footer-contact i {
+            color: var(--primary-light);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-social a.youtube {
+            color: #ff0000;
+        }
+
+        .footer-social a.instagram {
+            color: #e1306c;
+        }
+
+        .footer-social a.youtube:hover {
+            background: #ff0000;
+            color: white;
+        }
+
+        .footer-social a.instagram:hover {
+            background: #e1306c;
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe5d;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .banner-container {
+                height: 400px;
+            }
+
+            .banner-text h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-center {
+                width: 100%;
+                margin: 0;
+                flex-wrap: wrap;
+            }
+
+            .header-left h1 {
+                font-size: 1.8rem;
+            }
+
+            .banner-container {
+                height: 300px;
+            }
+
+            .banner-overlay {
+                padding: 30px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Cart Sidebar */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .cart-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 1001;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info h4 {
+            font-size: 1rem;
+            margin: 0 0 5px 0;
+            color: var(--text-main);
+        }
+
+        .testimonial-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .testimonial-images-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-images-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .remove-item {
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+            background: #fbfaf8;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .btn-checkout {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-checkout:hover {
+            background: #1ebe5d;
+        }
+
+        .cart-icon-btn {
+            position: relative;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .cart-icon-btn:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="header-left">
+                <h1>Meliponário Cambará</h1>
+            </div>
+            <div class="header-center">
+                <a href="#catalogo">Produtos</a>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Pesquisar produtos...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="social-icons" style="align-items: center;">
+                    <a href="#" class="instagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="youtube" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <button class="cart-icon-btn" onclick="toggleCart()" title="Ver Carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </button>
+                </div>
+                <img src="assets/logo.jpg" alt="Logo Meliponário Cambará" class="logo-img" style="margin-left: 15px;">
+            </div>
+        </div>
+    </header>
+
+    <section class="banner-section container">
+        <div class="banner-container animate-on-scroll">
+            <img src="assets/banner.png" alt="Colmeia de abelhas sem ferrão na natureza">
+            <div class="banner-overlay">
+                <div class="banner-text">
+                    <h2>Natureza em Cada Gota</h2>
+                    <p>Descubra a pureza dos produtos das abelhas sem ferrão nativas do Brasil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="container">
+        <div class="about-content">
+            <div class="about-text animate-on-scroll">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Quem Somos</h2>
+                <p>O <strong>Meliponário Cambará</strong> nasceu em 2020 de um gesto de afeto: uma única caixa de abelha
+                    Jataí, presente de pai para filho. O que começou como um presente transformou-se em uma paixão
+                    consolidada que hoje abriga mais de 70 colmeias de diversas espécies nativas, como Canudo,
+                    Mandaçaia, Bugia, Mirins e Manduri.</p>
+                <p>Especializado na criação de abelhas sem ferrão, o meliponário oferece produtos de alta qualidade para
+                    entusiastas e criadores, incluindo cera mista, bombons de pólen, caixas padrão INPA, atrativos,
+                    ninhos isca e própolis bruto.</p>
+                <p>Nossa trajetória é pautada pelo respeito à natureza e pelo compromisso em fornecer o melhor da
+                    meliponicultura brasileira.</p>
+            </div>
+            <div class="about-image animate-on-scroll">
+                <img src="assets/about_real.png" alt="Instalações do Meliponário Cambará">
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="catalog">
+        <div class="container">
+            <div class="catalog-header animate-on-scroll">
+                <h2 class="section-title">Catálogo de Produtos</h2>
+                <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido."
+                    class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Faça seu pedido direto pelo WhatsApp
+                </a>
+            </div>
+
+            <h3 class="category-title animate-on-scroll"><i class="fas fa-bug"></i> Enxames de Abelhas</h3>
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/banner.png" alt="Enxames de Abelhas">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Enxames de Abelhas Nativas</h3>
+                        <p class="product-desc">Consulte as espécies disponíveis (Jataí, Mandaçaia, Bugia, etc). Venda sob consulta.</p>
+                        <div class="product-footer">
+                            <span class="product-price">Sob consulta</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade%20de%20Enxames."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title animate-on-scroll"><i class="fas fa-box"></i> Caixas para Abelhas</h3>
+            <div class="products-grid">
+                <!-- Produto 3 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/caixa_real.jpg" alt="Caixa INPA 14x14">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caixa INPA 14x14</h3>
+                        <p class="product-desc">Queimada com maçarico e envernizada. Acompanha lixeira, ninho, sobre
+                            ninho e melgueira.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 70,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Caixa%20INPA%2014x14."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/caixa_real.jpg" alt="Caixa INPA 17x17">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caixa INPA 17x17</h3>
+                        <p class="product-desc">Queimada com maçarico e envernizada. Acompanha lixeira, ninho, sobre
+                            ninho e melgueira.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 78,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Caixa%20INPA%2017x17."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title animate-on-scroll"><i class="fas fa-leaf"></i> Produtos para Capturas</h3>
+            <div class="products-grid">
+                <!-- Produto 7 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/ninho_real.jpg" alt="Ninho isca">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ninho isca 2L</h3>
+                        <p class="product-desc">Ninho isca enxaguada com atrativo misto, preparado e pronto para uso
+                            imediato.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 10,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Ninho%20isca%202L."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/atrativo_real.jpg" alt="Atrativo misto">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Atrativo misto 200ml</h3>
+                        <p class="product-desc">Feito com cera e própolis de várias espécies de abelhas nativas. Ideal
+                            para capturas.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 25,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Atrativo%20misto%20200ml."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 8 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/propolis_real.jpg" alt="Própolis bruto">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Própolis bruto (mandaçaia) 500g</h3>
+                        <p class="product-desc">Serve para fazer atrativo e adubar plantas. Atenção: produto não
+                            indicado para consumo humano.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 40,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Própolis%20bruto%20(mandaçaia)%20500g."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title animate-on-scroll"><i class="fas fa-utensils"></i> Alimentação</h3>
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/bombons_real.jpg" alt="Bombons de pólen">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bombons de pólen 100g</h3>
+                        <p class="product-desc">Bombons fermentados 25 dias antes do preparo, aproximadamente 5 a 7
+                            bombons cada 100g.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 23,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Bombons%20de%20pólen%20100g."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/polen_real.jpg" alt="Pólen de Apis">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pólen de Apis</h3>
+                        <p class="product-desc">Pólen desidratado, ótimo para fazer seus próprios bombons para abelhas
+                            sem ferrão.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 30,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Pólen%20de%20Apis."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-img">
+                        <img src="assets/cera_real.jpg" alt="Cera mista">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cera mista</h3>
+                        <p class="product-desc">Fabricada com 70% de cera de apis e 30% de abelhas nativas. Qualidade
+                            garantida.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 25,00</span>
+                            <a href="https://wa.me/5551999748150?text=Olá!%20Gostaria%20de%20comprar%20Cera%20mista."
+                                class="btn-buy" target="_blank" title="Comprar pelo WhatsApp">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="support">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Como posso te ajudar?</h2>
+            <div class="support-grid">
+                <div class="support-card animate-on-scroll">
+                    <i class="fas fa-handshake support-icon"></i>
+                    <h3>Compromisso</h3>
+                    <p>Conte conosco para o que precisar. O seu sucesso na criação e manejo de abelhas é o nosso maior
+                        objetivo!</p>
+                </div>
+                <div class="support-card animate-on-scroll">
+                    <i class="fas fa-headset support-icon"></i>
+                    <h3>Suporte Dedicado</h3>
+                    <p>Precisa de suporte ou tem alguma dúvida? Atendimento humanizado todos os dias da semana para
+                        você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">O que dizem nossos clientes</h2>
+            <div class="testimonial-images-grid animate-on-scroll">
+                <img src="assets/avaliacao1.png" alt="Avaliação de cliente 1" onclick="openLightbox(this.src)">
+                <img src="assets/avaliacao2.png" alt="Avaliação de cliente 2" onclick="openLightbox(this.src)">
+                <img src="assets/avaliacao3.png" alt="Avaliação de cliente 3" onclick="openLightbox(this.src)">
+                <img src="assets/avaliacao4.png" alt="Avaliação de cliente 4" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Fale Conosco</h4>
+                    <p style="margin-bottom: 20px; color: #b3b3b3;">Temos orgulho de fornecer os melhores produtos para
+                        meliponicultura. Entre em contato!</p>
+                    <a href="https://wa.me/5551999748150?text=Olá!" class="btn-whatsapp" target="_blank"
+                        style="padding: 10px 20px; font-size: 1rem; margin-top: 0;">
+                        <i class="fab fa-whatsapp"></i> Enviar mensagem
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Redes Sociais</h4>
+                    <p style="color: #b3b3b3;">Acompanhe nosso dia a dia no meliponário e fique por dentro das
+                        novidades.</p>
+                    <div class="footer-social">
+                        <a href="#" class="instagram" target="_blank" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div style="margin-top: 15px; color: #b3b3b3;">@meliponario_cambara</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Localização</h4>
+                    <ul class="footer-contact" style="list-style: none;">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Nova Santa Rita - RS<br>Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Meliponário Cambará. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Fixo WhatsApp -->
+    <a href="https://wa.me/5551999748150?text=Olá,%20vim%20pelo%20site!" class="whatsapp-float" target="_blank"
+        aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript para Animações e Lógica Simples -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animação ao rolar (Scroll Reveal)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Setup dos botões de compra para adicionar ao carrinho e compra direta
+            document.querySelectorAll('.btn-buy').forEach(btn => {
+                const wppLink = btn.getAttribute('href');
+                
+                const actionContainer = document.createElement('div');
+                actionContainer.style.display = 'flex';
+                actionContainer.style.gap = '10px';
+                
+                const cartBtn = document.createElement('button');
+                cartBtn.className = 'btn-buy';
+                cartBtn.innerHTML = '<i class="fas fa-cart-plus"></i>';
+                cartBtn.title = 'Adicionar ao carrinho';
+                cartBtn.style.cursor = 'pointer';
+                cartBtn.style.border = 'none';
+                
+                cartBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = actionContainer.closest('.product-info');
+                    const name = card.querySelector('.product-title').innerText;
+                    const priceText = card.querySelector('.product-price').innerText;
+                    const price = parseFloat(priceText.replace('R$ ', '').replace(',', '.'));
+                    addToCart(name, price);
+                });
+                
+                const wppBtn = document.createElement('a');
+                wppBtn.className = 'btn-wpp';
+                wppBtn.href = wppLink;
+                wppBtn.target = '_blank';
+                wppBtn.title = 'Comprar agora pelo WhatsApp';
+                wppBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+                
+                actionContainer.appendChild(cartBtn);
+                actionContainer.appendChild(wppBtn);
+                
+                btn.parentNode.replaceChild(actionContainer, btn);
+            });
+        });
+
+        // ==========================
+        // Lógica do Carrinho
+        // ==========================
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+
+            const cartBtn = document.querySelector('.cart-icon-btn');
+            cartBtn.style.transform = 'scale(1.3) translateY(-3px)';
+            setTimeout(() => cartBtn.style.transform = 'scale(1) translateY(0)', 200);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-overlay').classList.toggle('active');
+            document.getElementById('cart-sidebar').classList.toggle('active');
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const itemsContainer = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total-price');
+
+            countEl.textContent = cart.length;
+
+            itemsContainer.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p style="text-align:center; color:#888; margin-top:20px;">Seu carrinho está vazio.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    itemsContainer.innerHTML += `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <h4>${item.name}</h4>
+                                <div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</div>
+                            </div>
+                            <button class="remove-item" onclick="removeFromCart(${index})"><i class="fas fa-times"></i></button>
+                        </div>
+                    `;
+                });
+            }
+
+            totalEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function checkout(e) {
+            e.preventDefault();
+            if (cart.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            let message = "Olá! Gostaria de finalizar o seguinte pedido:\n\n";
+            let total = 0;
+
+            const counts = {};
+            cart.forEach(item => {
+                counts[item.name] = (counts[item.name] || 0) + 1;
+                total += item.price;
+            });
+
+            for (const [name, qty] of Object.entries(counts)) {
+                message += `${qty}x ${name}\n`;
+            }
+
+            message += `\n*Total:* R$ ${total.toFixed(2).replace('.', ',')}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5551999748150?text=${encodedMessage}`, '_blank');
+        }
+
+        // ==========================
+        // Lógica do Lightbox (Zoom da Imagem)
+        // ==========================
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox(e) {
+            if (e.target.id === 'lightbox' || e.target.closest('.lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.product-img img').forEach(img => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => {
+                    openLightbox(img.src);
+                });
+            });
+
+            // Lógica da Barra de Pesquisa
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase();
+                    const products = document.querySelectorAll('.product-card');
+                    products.forEach(product => {
+                        const title = product.querySelector('.product-title').innerText.toLowerCase();
+                        if (title.includes(term)) {
+                            product.style.display = 'flex';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <!-- Carrinho Modal/Sidebar HTML -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p style="text-align:center; color:#888; margin-top:20px;">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout(event)">
+                <i class="fab fa-whatsapp"></i> Finalizar Pedido
+            </button>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Fechar"><i class="fas fa-times"></i></button>
+            <img src="" alt="Imagem ampliada" class="lightbox-img" id="lightbox-img">
+        </div>
+    </div>
+</body>
+
+</html>
